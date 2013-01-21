@@ -1,0 +1,9 @@
+= Redmine Embedded Flash Plugin
+
+This plugin lets you embed Flash content in wiki, issues, etc. thanks to the {{flash(file, width, height)}} macro:
+* 'file' is required and is either an URL or an attachment name
+* 'width' is optional and defaults to 400
+* 'height' is optional and defaults to 300
+
+Note that this plugin patches attachments_controller.rb to use the 'Content-Disposition: inline' header for SWF files.
+Without this change, Flash Player 10 and above would refuse to display attachments for security reasons.
