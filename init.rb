@@ -1,6 +1,6 @@
 require 'redmine'
 
-Rails.application.config.to_prepare do
+Rails.configuration.to_prepare do
   require_dependency 'redmine_embedded_flash/attachments_controller_patch'
 end
 
@@ -11,7 +11,6 @@ Redmine::Plugin.register :redmine_embedded_flash do
   url 'https://github.com/fcrespel/redmine_embedded_flash'
   description 'This plugin lets you embed Flash content in wiki, issues, etc. thanks to the {{flash(file, width, height)}} macro.'
   version '1.0.0'
-  requires_redmine :version_or_higher => '2.0.0'
 end
 
 Redmine::WikiFormatting::Macros.register do
